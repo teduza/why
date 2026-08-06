@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#081018" name="theme-color"/>
+<meta content="M.A.R.S. Companion 是一款完全离线运行的AI语音伴侣，正在亚美尼亚建设，其未来与卡潘紧密相连。" name="description"/>
+<meta content="index,follow" name="robots"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="M.A.R.S." name="apple-mobile-web-app-title"/>
+<link href="https://why.teduza.com/zh/" rel="canonical"/>
+<link href="https://why.teduza.com/" hreflang="en" rel="alternate"/>
+<link href="https://why.teduza.com/ru/" hreflang="ru" rel="alternate"/>
+<link href="https://why.teduza.com/hy/" hreflang="hy" rel="alternate"/>
+<link href="https://why.teduza.com/de/" hreflang="de" rel="alternate"/>
+<link href="https://why.teduza.com/fr/" hreflang="fr" rel="alternate"/>
+<link href="https://why.teduza.com/zh/" hreflang="zh" rel="alternate"/>
+<link href="https://why.teduza.com/uk/" hreflang="uk" rel="alternate"/>
+<link href="../favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="../favicon.ico" rel="shortcut icon"/>
+<link href="../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="../site.webmanifest" rel="manifest"/>
+<title>M.A.R.S. Companion — 为什么是亚美尼亚</title>
+<meta content="M.A.R.S. Companion, Alexander Sarkisian, Armenia, Kapan, offline AI, voice AI, semantic memory, private AI" name="keywords"/>
+<meta content="Alexander Sarkisian" name="author"/>
+<meta content="M.A.R.S. Companion — 为什么是亚美尼亚" property="og:title"/>
+<meta content="M.A.R.S. Companion 是一款完全离线运行的AI语音伴侣，正在亚美尼亚建设，其未来与卡潘紧密相连。" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="M.A.R.S. Companion — 为什么是亚美尼亚" name="twitter:title"/>
+<meta content="M.A.R.S. Companion 是一款完全离线运行的AI语音伴侣，正在亚美尼亚建设，其未来与卡潘紧密相连。" name="twitter:description"/>
+<style>
+:root{
+  --bg:#081018;
+  --bg-2:#060b11;
+  --panel:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.10);
+  --text:#ecf2f8;
+  --muted:rgba(236,242,248,.72);
+  --muted-2:rgba(236,242,248,.58);
+  --accent:#6df2c4;
+  --accent-2:#7fb0ff;
+  --accent-3:#b6ffea;
+  --shadow:0 18px 60px rgba(0,0,0,.38);
+  --radius:24px;
+  --max:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 15% 0%, rgba(111,242,196,.17), transparent 36%),
+    radial-gradient(1000px 600px at 85% 10%, rgba(127,176,255,.12), transparent 32%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  color:var(--text);
+  min-height:100vh;
+}
+.wrap{width:min(var(--max), calc(100% - 24px));margin:0 auto;padding-bottom:40px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0;flex-wrap:wrap}
+.brand{font-size:.9rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.topbar-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.nav{display:flex;gap:8px;flex-wrap:wrap}
+.nav a{color:var(--muted);text-decoration:none;padding:10px 14px;border-radius:999px;transition:.25s}
+.nav a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+.nav a.external{color:var(--accent-3)}
+.hero{padding:20px 0}
+.hero-card{border:1px solid var(--line);border-radius:30px;background:rgba(255,255,255,.05);padding:34px;box-shadow:var(--shadow)}
+.eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:14px}
+h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.05;margin-bottom:16px}
+.lead{font-size:1.08rem;line-height:1.8;color:var(--muted);max-width:760px}
+.quote-terminal{margin-top:24px;padding:18px;border-left:4px solid var(--accent);border-radius:16px;background:rgba(255,255,255,.03)}
+.meta{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-3);margin-bottom:8px}
+.line{font-family:monospace;color:#a8ffd9;line-height:1.7;font-size:1rem}
+.hero-meta{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.chip{padding:10px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted);font-size:.92rem}
+main{display:grid;gap:18px;margin-top:20px}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:24px}
+.section-title{font-size:.82rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:14px}
+h2{font-size:1.5rem;margin-bottom:14px}
+p{line-height:1.85;color:var(--muted);margin-bottom:14px}
+.timeline{display:grid;gap:14px;margin-top:14px}
+.timeline-item{display:flex;gap:14px;align-items:flex-start;padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03)}
+.timeline-badge{padding:8px 14px;border-radius:999px;background:var(--accent);color:#061010;font-weight:700;white-space:nowrap;font-size:.9rem;flex:0 0 auto}
+.timeline-text{color:var(--muted);line-height:1.7}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px}
+.contact-link{text-decoration:none;color:var(--text);border:1px solid var(--line);padding:12px 16px;border-radius:16px;transition:.25s}
+.contact-link:hover{background:rgba(255,255,255,.05)}
+.aside{margin-top:20px;padding:18px;border-radius:18px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+.aside a{color:var(--accent-3)}
+.footer{text-align:center;padding:40px 0 28px;color:var(--muted-2);font-size:.95rem}
+.footer-line{display:block;margin-top:10px}
+.lang-switcher{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lang-switcher a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:700;letter-spacing:.10em;text-transform:uppercase;padding:4px 0;transition:.2s}
+.lang-switcher a:hover{color:var(--text)}
+.lang-switcher a.active{color:var(--text);text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+@media(max-width:768px){
+  .hero-card{padding:24px}
+  .timeline-item{flex-direction:column}
+  .topbar{align-items:flex-start}
+  .topbar-right{width:100%;justify-content:space-between;gap:8px}
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(800px 480px at 50% 18%, rgba(111,242,196,.06), transparent 56%),
+    linear-gradient(180deg, rgba(8,16,24,.18), rgba(6,11,17,.36));
+  opacity:0;
+  transition:opacity .32s ease;
+  z-index:9998;
+}
+body.preload::after,
+body.leaving::after{ opacity:1; }
+.topbar,.hero-card,.card,.footer{
+  will-change:opacity,transform,filter;
+  transition:opacity .55s ease,transform .55s ease,filter .55s ease;
+  transition-delay: var(--delay, 0ms);
+}
+body.preload .topbar,body.preload .hero-card,body.preload .card,body.preload .footer{
+  opacity:0;transform:translateY(18px) scale(.985);filter:blur(4px);
+}
+body.ready .topbar,body.ready .hero-card,body.ready .card,body.ready .footer{
+  opacity:1;transform:translateY(0) scale(1);filter:blur(0);
+}
+</style>
+<noscript>
+<style>
+body.preload .topbar,body.preload .hero-card,body.preload .card,body.preload .footer{opacity:1 !important;transform:none !important;filter:none !important;}
+body::after{display:none !important;}
+</style>
+</noscript>
+</head>
+<body class="preload">
+<div class="wrap">
+<header class="topbar">
+<div class="brand">M.A.R.S. Companion</div>
+<div class="topbar-right">
+<nav aria-label="Language switcher" class="lang-switcher"><a href="../">EN</a><a href="../ru/">RU</a><a href="../hy/">HY</a><a href="../de/">DE</a><a href="../fr/">FR</a><a class="active" href="./">中文</a><a href="../uk/">UA</a></nav>
+<nav class="nav">
+<a href="#why-armenia">为什么是亚美尼亚</a>
+<a href="#why-kapan">为什么是卡潘</a>
+<a href="#project">项目</a>
+<a href="#prototype">原型机</a>
+<a href="#contact">联系方式</a>
+<a class="external" href="https://teduza.com" rel="noopener noreferrer" target="_blank">主站 ↗</a>
+</nav>
+</div>
+</header>
+<section class="hero" id="top">
+<div class="hero-card">
+<div class="eyebrow">M.A.R.S. Companion 落地亚美尼亚</div>
+<h1>为什么是亚美尼亚。<br>为什么是卡潘。</h1>
+<p class="lead">一款完全离线运行、具备长期记忆的AI伴侣——这个技术项目正在亚美尼亚扎根，并将未来与卡潘紧密相连。</p>
+<div class="quote-terminal">
+<div class="meta">创始人 — Alexander Sarkisian</div>
+<div class="line">&gt; 我们在这里注册公司。我们在这里构建未来。</div>
+</div>
+<div class="hero-meta">
+<span class="chip">100% 本地运行</span><span class="chip">无云端 • 无订阅</span><span class="chip">已在 Raspberry Pi 4 上测试</span><span class="chip">在亚美尼亚注册公司</span>
+</div>
+</div>
+</section>
+<main>
+<section class="card" id="why-armenia">
+<div class="section-title">为什么是亚美尼亚</div>
+<h2>深思熟虑的选择，而非偶然</h2>
+<p>选择亚美尼亚是经过深思熟虑的——这里拥有稳定且快速发展的科技生态系统，公司注册流程清晰，也是一个可以安全、公开地推进长期技术项目的环境。</p><p>这不是临时的落脚点，而是 M.A.R.S. Companion 真正扎根成长的地方。</p>
+</section>
+<section class="card" id="why-kapan">
+<div class="section-title">为什么是卡潘</div>
+<h2>首都之外的科技力量</h2>
+<p>我们相信科技发展不应局限于首都。位于休尼克省的卡潘，是一个从一开始就参与地区发展的机会——把专业知识和就业机会带到真正需要的地方。</p><p>M.A.R.S. Companion 的未来，有意与卡潘紧密相连。</p>
+</section>
+<section class="card" id="project">
+<div class="section-title">关于项目</div>
+<h2>一个真正驻留在设备上的私密AI</h2>
+<p>M.A.R.S. Companion（Mobile Autonomous Reasoning System）是一款完全离线运行的语音AI伴侣，具备长期语义记忆。语音识别、推理和语音合成全部在本地完成——没有任何数据离开设备。</p><p>没有账户、没有云端、没有数据收集。这是一个真正属于用户本人、而非属于企业的个人AI。</p>
+</section>
+<section class="card" id="prototype">
+<div class="section-title">原型机</div>
+<h2>可运行的原型机已经存在</h2>
+<p>该系统在 Raspberry Pi 4 上完整运行离线流程——语音识别、语义记忆检索、上下文推理与语音合成，全部在本地完成。</p><p>已由创始人及其他用户测试。</p>
+</section>
+<section class="card">
+<div class="section-title">路线图</div>
+<h2>接下来的计划</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-badge">2026年5月15日</div>
+<div class="timeline-text">提交英国专利申请 — GB2611463.7（已确立优先权日期）</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-badge">2026年</div>
+<div class="timeline-text">迁居亚美尼亚，公司注册正在进行中，重点关注卡潘</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-badge">2026年第三/四季度</div>
+<div class="timeline-text">硬件升级，性能大幅提升</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-badge">2027年</div>
+<div class="timeline-text">封闭内测 • 限量设备发布</div>
+</div>
+</div>
+</section>
+<section class="card" id="contact">
+<div class="section-title">联系方式</div>
+<h2>欢迎交流与合作</h2>
+<p>现场演示及原型机短视频，可应要求提供。</p><p>Alexander Sarkisian<br>发明人兼创始人，M.A.R.S. Companion</p>
+<div class="contact-links">
+<a class="contact-link" href="mailto:contact@teduza.com">contact@teduza.com</a>
+<a class="contact-link" href="https://t.me/teduza" rel="noopener noreferrer" target="_blank">@teduza</a>
+</div>
+<div class="aside">
+<p>了解项目更多信息，请访问主站 <a href="https://teduza.com" rel="noopener noreferrer" target="_blank">teduza.com</a></p>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div>© 2026 Alexander Sarkisian • M.A.R.S. Companion</div>
+<div class="footer-line">Address for Service: Office 19092, 182-184 High Street North, East Ham, London, E6 2JA, United Kingdom</div>
+</footer>
+</div>
+<script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  const currentSegment = location.pathname.replace(/\/+$/, '').split('/').pop().toLowerCase();
+  const isLanguageFolder = ['ru', 'hy', 'de', 'fr', 'zh', 'uk'].includes(currentSegment);
+  const swPath = isLanguageFolder ? '../service-worker.js' : './service-worker.js';
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(swPath).catch(() => {});
+  });
+}
+</script>
+<script>
+(function () {
+  const items = [
+    document.querySelector('.topbar'),
+    document.querySelector('.hero-card'),
+    ...document.querySelectorAll('.card'),
+    document.querySelector('.footer')
+  ].filter(Boolean);
+
+  items.forEach((el, index) => {
+    el.style.setProperty('--delay', `${index * 60}ms`);
+  });
+
+  const setReady = () => {
+    document.body.classList.remove('preload');
+    document.body.classList.add('ready');
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => requestAnimationFrame(setReady), { once: true });
+  } else {
+    requestAnimationFrame(setReady);
+  }
+})();
+</script>
+</body>
+</html>
