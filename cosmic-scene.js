@@ -10,7 +10,7 @@ export function initCosmicScene(container) {
   const density = isMobile ? 0.4 : 1;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0a0a0f, 0.0008);
+  scene.fog = new THREE.FogExp2(0x06140b, 0.0008);
 
   const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 2000);
   camera.position.set(0, 0, 100);
