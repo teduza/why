@@ -787,6 +787,318 @@ body.leaving::after{opacity:1}
   .eyebrow{letter-spacing:.14em}
   .hero-card{padding:20px}
 }
+
+/* --- Topbar & Mobile Menu --- */
+.topbar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 18px;
+  margin: 12px auto 20px;
+  max-width: var(--max);
+  position: sticky;
+  top: 12px;
+  z-index: 100;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(6, 20, 11, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-radius 0.25s ease;
+}
+.topbar.is-expanded {
+  border-radius: 24px;
+}
+.topbar-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+.brand {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  transition: color .25s ease, text-shadow .25s ease;
+}
+.brand:hover {
+  color: var(--accent-3);
+  text-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
+}
+.brand-logo {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+.topbar-desktop {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  transition: all .2s ease;
+}
+.nav a:hover {
+  color: #fff;
+  background: rgba(16, 185, 129, 0.16);
+}
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line-2);
+  background: rgba(4, 15, 8, 0.7);
+  backdrop-filter: blur(8px);
+}
+.lang-switcher a {
+  color: var(--muted-2);
+  text-decoration: none;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 999px;
+  line-height: 1;
+  transition: all .2s ease;
+}
+.lang-switcher a:hover {
+  color: #fff;
+  background: rgba(16, 185, 129, 0.22);
+}
+.lang-switcher a.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--mars), var(--mars-light));
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+}
+.topbar-mobile-actions {
+  display: none;
+}
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: rgba(6, 20, 11, 0.7);
+  cursor: pointer;
+  padding: 0;
+  transition: all .2s ease;
+}
+.mobile-menu-toggle:hover {
+  border-color: var(--mars-light);
+  background: rgba(16, 185, 129, 0.2);
+}
+.mobile-menu-toggle .bar {
+  width: 18px;
+  height: 2px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.mobile-menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.mobile-menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+.mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  padding-top: 14px;
+  margin-top: 10px;
+  border-top: 1px solid var(--line-2);
+}
+.mobile-dropdown.is-open {
+  display: flex;
+}
+.mobile-dropdown-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mobile-dropdown-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background .2s ease;
+}
+.mobile-dropdown-nav a:hover {
+  background: rgba(16, 185, 129, 0.16);
+}
+.mobile-dropdown-lang {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--line-2);
+  padding-top: 10px;
+}
+.mobile-dropdown-label {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--muted-2);
+  font-weight: 700;
+  padding-left: 4px;
+}
+.lang-switcher-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+.lang-switcher-grid a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 8px;
+  font-size: .75rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(6, 20, 11, 0.6);
+  border: 1px solid var(--line-2);
+  transition: all .2s ease;
+}
+.lang-switcher-grid a.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--mars), var(--mars-light));
+  border-color: var(--mars-light);
+}
+
+/* --- Grand Footer --- */
+.footer {
+  margin-top: 64px;
+  padding: 48px 24px 28px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent 0%, rgba(6, 20, 11, 0.8) 100%);
+  border-radius: 32px 32px 0 0;
+  font-size: .9rem;
+  width: 100%;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 36px;
+  flex-wrap: wrap;
+  max-width: var(--max);
+  margin: 0 auto 36px;
+}
+.footer-brand-col {
+  max-width: 320px;
+}
+.footer-title {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.footer-tagline {
+  font-size: .82rem;
+  color: var(--accent-3);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.footer-line {
+  font-size: .8rem;
+  color: var(--muted-2);
+}
+.footer-links-grid {
+  display: flex;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+.footer-links-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 130px;
+}
+.footer-group-title {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--accent-3);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .82rem;
+  transition: all .2s ease;
+}
+.footer-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+  transform: translateX(2px);
+}
+.footer-bottom {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: .76rem;
+  color: var(--muted-2);
+}
+.footer-sub {
+  font-size: .72rem;
+  color: var(--muted-2);
+}
+
+@media (max-width: 820px) {
+  .topbar-desktop { display: none; }
+  .topbar-mobile-actions { display: flex; }
+  .footer-inner { flex-direction: column; gap: 28px; }
+  .footer-links-grid { gap: 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
 </style>
 </head>
 <body class="preload">
@@ -794,22 +1106,48 @@ body.leaving::after{opacity:1}
 <div id="cosmic-canvas"></div>
 <div class="wrap">
 <header class="topbar">
-<a class="brand" href="./"><img alt="M.A.R.S. Companion" class="brand-logo" src="../logo.png"/>M.A.R.S. Companion</a>
-<div class="topbar-right">
-<nav aria-label="Language switcher" class="lang-switcher"><a href="../">EN</a><a class="active" href="./">RU</a><a href="../hy/">HY</a><a href="../de/">DE</a><a href="../fr/">FR</a><a href="../zh/">中文</a><a href="../uk/">UA</a></nav>
-<div class="nav-wrap">
-<span aria-hidden="true" class="nav-hint nav-hint-left">←</span>
-<nav class="nav">
-<a href="#why-armenia">Почему Армения</a>
-<a href="#why-kapan">Почему Капан</a>
-<a href="#project">Проект</a>
-<a href="#prototype">Прототип</a>
-<a href="#contact">Контакты</a>
-<a href="https://teduza.com">Полная версия ↗</a>
-</nav>
-<span aria-hidden="true" class="nav-hint nav-hint-right">→</span>
-</div>
-</div>
+  <div class="topbar-main">
+    <a class="brand" href="../">
+      <img alt="M.A.R.S. Companion" class="brand-logo" src="../logo.png"/>
+      <span>M.A.R.S. Companion</span>
+    </a>
+    <div class="topbar-desktop">
+      <nav aria-label="Navigation" class="nav">
+        <a href="#why-armenia">Почему Армения</a>
+        <a href="#why-kapan">Почему Капан</a>
+        <a href="#project">Проект</a>
+        <a href="#prototype">Прототип</a>
+        <a href="#contact">Контакты</a>
+        <a href="https://teduza.com/ru/" target="_blank" rel="noopener noreferrer">Полная версия ↗</a>
+      </nav>
+      <nav aria-label="Language switcher" class="lang-switcher">
+        <a href="../">EN</a><a class="active" href="../ru/">RU</a><a href="../hy/">HY</a><a href="../de/">DE</a><a href="../fr/">FR</a><a href="../zh/">中文</a><a href="../uk/">UA</a>
+      </nav>
+    </div>
+    <div class="topbar-mobile-actions">
+      <button aria-label="Toggle menu" class="mobile-menu-toggle" type="button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-dropdown">
+    <nav aria-label="Mobile navigation" class="mobile-dropdown-nav">
+      <a href="#why-armenia">Почему Армения</a>
+      <a href="#why-kapan">Почему Капан</a>
+      <a href="#project">Проект</a>
+      <a href="#prototype">Прототип</a>
+      <a href="#contact">Контакты</a>
+      <a href="https://teduza.com/ru/" target="_blank" rel="noopener noreferrer">Полная версия ↗</a>
+    </nav>
+    <div class="mobile-dropdown-lang">
+      <div class="mobile-dropdown-label">Language</div>
+      <nav aria-label="Language options" class="lang-switcher-grid">
+        <a href="../">EN</a><a class="active" href="../ru/">RU</a><a href="../hy/">HY</a><a href="../de/">DE</a><a href="../fr/">FR</a><a href="../zh/">中文</a><a href="../uk/">UA</a>
+      </nav>
+    </div>
+  </div>
 </header>
 <section class="hero" id="top">
 <div class="hero-card">
@@ -870,8 +1208,49 @@ body.leaving::after{opacity:1}
 </section>
 </main>
 <footer class="footer">
-<div>© 2026 M.A.R.S. COMPANION LLC</div>
-<div class="footer-line">Kapan, Syunik, Republic of Armenia</div>
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <div class="footer-title">M.A.R.S. COMPANION LLC</div>
+      <div class="footer-tagline">Мобильная автономная система рассуждения • 100% офлайн ИИ</div>
+      <div class="footer-line">Капан, Сюник, Республика Армения</div>
+    </div>
+    <div class="footer-links-grid">
+      <div class="footer-links-group">
+        <div class="footer-group-title">Экосистема</div>
+        <div class="footer-links">
+          <a href="../ru/">Главная</a>
+          <a href="https://teduza.com/ru/team/">Команда</a>
+          <a href="https://teduza.com/ru/founder/">Основатель</a>
+          <a href="https://teduza.com/ru/profiles/">Профили</a>
+          <a href="https://teduza.com/ru/patents/">Патенты</a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-group-title">Сеть проектов</div>
+        <div class="footer-links">
+          <a href="https://company.teduza.com/ru/" target="_blank" rel="noopener noreferrer">Компания</a>
+          <a href="https://why.teduza.com/ru/" target="_blank" rel="noopener noreferrer">Манифест</a>
+          <a href="https://sarkisian.teduza.com/ru/" target="_blank" rel="noopener noreferrer">Биография</a>
+          <a href="https://news.teduza.com/ru/" target="_blank" rel="noopener noreferrer">Новости</a>
+          <a href="https://sarkisian.site/" target="_blank" rel="noopener noreferrer">История</a>
+        </div>
+      </div>
+      <div class="footer-links-group">
+        <div class="footer-group-title">Идентификаторы и профили</div>
+        <div class="footer-links">
+          <a href="https://www.wikidata.org/wiki/Q141447666" target="_blank" rel="noopener noreferrer">Wikidata Q141447666</a>
+          <a href="https://orcid.org/0009-0007-6747-2634" target="_blank" rel="noopener noreferrer">ORCID</a>
+          <a href="https://isni.org/isni/0000000530338018" target="_blank" rel="noopener noreferrer">ISNI</a>
+          <a href="https://scholar.google.ru/citations?user=KVpNW_QAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://t.me/teduza" target="_blank" rel="noopener noreferrer">Telegram @teduza</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 M.A.R.S. COMPANION LLC • Александр Саркисян</div>
+    <div class="footer-sub">Приватно по умолчанию • Локальная память • Без облачной слежки</div>
+  </div>
 </footer>
 </div>
 <script type="importmap">
@@ -974,5 +1353,29 @@ window.__cosmicScene = scene;
   });
 })();
 </script>
+
+<script>
+(function() {
+  var toggle = document.querySelector('.mobile-menu-toggle');
+  var dropdown = document.querySelector('.mobile-dropdown');
+  var topbar = document.querySelector('.topbar');
+  if (toggle && dropdown) {
+    toggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = dropdown.classList.toggle('is-open');
+      toggle.classList.toggle('is-active', isOpen);
+      if (topbar) topbar.classList.toggle('is-expanded', isOpen);
+    });
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+        dropdown.classList.remove('is-open');
+        toggle.classList.remove('is-active');
+        if (topbar) topbar.classList.remove('is-expanded');
+      }
+    });
+  }
+})();
+</script>
+
 </body>
 </html>

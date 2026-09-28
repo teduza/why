@@ -37,9 +37,9 @@ export function initCosmicScene(container) {
   // Procedural displacement + coloring for terrain (rust plains, dark craters, dusty highlands)
   const posAttr = marsGeo.attributes.position;
   const colorArr = new Float32Array(posAttr.count * 3);
-  const deepRust = new THREE.Color(0x7a2c0a);
-  const midRust = new THREE.Color(0xc1440e);
-  const dustHigh = new THREE.Color(0xe8935a);
+  const deepRust = new THREE.Color(0x064e3b);
+  const midRust = new THREE.Color(0x059669);
+  const dustHigh = new THREE.Color(0x34d399);
   for (let i = 0; i < posAttr.count; i++) {
     const x = posAttr.getX(i);
     const y = posAttr.getY(i);
@@ -66,7 +66,7 @@ export function initCosmicScene(container) {
   // Atmospheric glow
   const glowGeo = new THREE.SphereGeometry(21, 64, 64);
   const glowMat = new THREE.ShaderMaterial({
-    uniforms: { glowColor: { value: new THREE.Color(0xd97f3d) } },
+    uniforms: { glowColor: { value: new THREE.Color(0x10b981) } },
     vertexShader: `
       varying vec3 vNormal;
       void main() {
@@ -90,12 +90,12 @@ export function initCosmicScene(container) {
   marsGroup.add(glow);
 
   // Lighting
-  const ambient = new THREE.AmbientLight(0x331108, 0.4);
+  const ambient = new THREE.AmbientLight(0x06331a, 0.4);
   scene.add(ambient);
-  const sun = new THREE.DirectionalLight(0xffaa66, 1.8);
+  const sun = new THREE.DirectionalLight(0xa7f3d0, 1.8);
   sun.position.set(50, 20, 40);
   scene.add(sun);
-  const rim = new THREE.DirectionalLight(0x4488ff, 0.3);
+  const rim = new THREE.DirectionalLight(0x34d399, 0.3);
   rim.position.set(-50, -10, -30);
   scene.add(rim);
 
@@ -164,7 +164,7 @@ export function initCosmicScene(container) {
   }
   dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
   const dustMat = new THREE.PointsMaterial({
-    color: 0xd97f3d,
+    color: 0x10b981,
     size: 0.6,
     transparent: true,
     opacity: 0.6,
